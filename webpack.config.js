@@ -6,7 +6,14 @@ module.exports = {
   devServer: {
     // contentBase: path.join(__dirname, 'dist'),
     // compress: true,
-    port: 3000
+    port: 3000,
+    before: (app, server) => {
+      app.get('/0.js', async (req, res, next) => {
+        setTimeout(function() {
+          next();
+        }, 3000);
+      });
+    }
   },
   module: {
     rules: [

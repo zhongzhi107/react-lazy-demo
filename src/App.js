@@ -19,7 +19,6 @@ function App() {
   );
 }
 
-// AnotherLazyComponent.js (imagine in another file)
 const AndYetAnotherLazyComponent = React.lazy(() =>
   import('./AndYetAnotherLazyComponent')
 );
